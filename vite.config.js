@@ -5,28 +5,28 @@ import dsv from '@rollup/plugin-dsv';
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [
-    react(),
-    svgr({
-      svgrOptions: {
-        exportType: 'default',
-        ref: true,
-        svgo: false,
-        titleProp: true,
-      },
-      include: '**/*.svg',
-    }),
-    dsv(),
-  ],
-  build: {
-    sourcemap: true,
-  },
-  server: {
-    open: true,
-  },
-  css: {
-    modules: {
-      localsConvention: 'camelCaseOnly',
+    plugins: [
+        react(),
+        svgr({
+            svgrOptions: {
+                exportType: 'default',
+                ref: true,
+                svgo: false,
+                titleProp: true,
+            },
+            include: '**/*.svg',
+        }),
+        dsv(),
+    ],
+    build: {
+        sourcemap: true,
     },
-  },
+    server: {
+        open: true,
+    },
+    css: {
+        modules: {
+            localsConvention: 'camelCaseOnly',
+        },
+    },
 });

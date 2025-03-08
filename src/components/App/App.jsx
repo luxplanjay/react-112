@@ -1,15 +1,13 @@
-import UserForm from '../UserForm/UserForm';
+// import toast, { Toaster } from "react-hot-toast";
+// import ArticleList from '../ArticleList/ArticleList';
+// import { useEffect, useState } from 'react';
+// import SearchForm from '../SearchForm/SearchForm';
 import css from './App.module.css';
 
 export default function App() {
-  const addUser = (newUser) => {
-    console.log(`Adding new user:`, newUser);
-  };
-
-  return (
-    <div className={css.container}>
-      <h1>Forms with Formik</h1>
-      <UserForm onAdd={addUser} />
-    </div>
-  );
+    return (
+        <div className={css.container}>
+            <h1>HTTP requests in React</h1>
+        </div>
+    );
 }

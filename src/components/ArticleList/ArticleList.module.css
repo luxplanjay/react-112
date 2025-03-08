@@ -1,0 +1,24 @@
+.list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.item {
+    padding: 8px;
+    border-bottom: 1px solid #333;
+}
+
+.link {
+    text-decoration: none;
+    color: #4da6ff;
+    font-size: 16px;
+}
+
+.link:hover {
+    text-decoration: underline;
+    color: #82caff;
+}

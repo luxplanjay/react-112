@@ -1,19 +1,17 @@
-# Заняття 6 - Форми з Formik
+# Заняття 7 - HTTP-запити
 
-- Бібліотека [Formik](https://formik.org/)
-- Контейнер форми `Formik` та `Form`
-  - Пропс `initialValues`
-  - Пропс `onSubmit`
-- Поля форми `Field`
-  - Атрибут `name`
-  - Початкове значення елементів
-- Відправка форми
-  - Параметри `values` та `actions` у `onSubmit`
-- Стилізація компонентів Formik
-- Типи полів через пропс `as`
-- Валідація з [`Yup`](https://github.com/jquense/yup)
-  - Схема валідаціі
-  - Можливі аргументи функції-валідатора
-  - Пропс `validationSchema`
-- Компонент `ErrorMessage`
-  - Пропс `component`
+-   HTTP-запити з Axios
+    -   https://hn.algolia.com/api (http://hn.algolia.com/api/v1/search)
+    -   Запит при монтуванні компонента
+    -   Оголошення функціі у еффекті
+    -   Обробка даних запиту
+    -   Відображення даних
+    -   Поділ відповідальності
+    -   Індикатор завантаження
+    -   Обробка помилок
+    -   Пошук через форму
+-   Пагінація
+    -   Параметри `page` та `hitsPerPage`
+    -   Кнопка Load more
+    -   Зберігання `page` та `topic` у стані
+-   Бібліотека [React Hot Toast](https://react-hot-toast.com/)
