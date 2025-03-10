@@ -1,6 +1,3 @@
-// import toast, { Toaster } from "react-hot-toast";
-// import ArticleList from '../ArticleList/ArticleList';
-// import SearchForm from '../SearchForm/SearchForm';
 import { useEffect, useState } from 'react';
 import toast, { Toaster } from 'react-hot-toast';
 import SearchForm from '../SearchForm/SearchForm';
@@ -8,10 +5,9 @@ import ArticleList from '../ArticleList/ArticleList';
 import { fetchArticles } from '../../articleService';
 import css from './App.module.css';
 
-// 1. Form submit
-// 2. http when?
-//   1) form submission (topic change)
-//   2) chage page
+// Коли відбувається http запит?
+//   1) Зміна терміну пошуку searchTerm (сабміт форми)
+//   2) Зміна номеру групи page (Клік по load more)
 
 export default function App() {
     const [articles, setArticles] = useState([]);
@@ -24,6 +20,10 @@ export default function App() {
         setSearchTerm(topic);
         setPage(1);
         setArticles([]);
+    };
+
+    const handleLoadMoreClick = () => {
+        setPage(page + 1);
     };
 
     useEffect(() => {
@@ -61,7 +61,7 @@ export default function App() {
             {isLoading && <b>Loading data, please wait...</b>}
 
             {articles.length > 0 && !isLoading && (
-                <button onClick={() => setPage(page + 1)}>
+                <button onClick={handleLoadMoreClick}>
                     Load more articles {page}
                 </button>
             )}
