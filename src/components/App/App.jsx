@@ -7,7 +7,7 @@ import css from './App.module.css';
 
 // Коли відбувається http запит?
 //   1) Зміна терміну пошуку searchTerm (сабміт форми)
-//   2) Зміна номеру групи page (Клік по load more)
+//   2) Зміна номеру групи page (Клnuік по load more)
 
 export default function App() {
     const [articles, setArticles] = useState([]);
@@ -17,7 +17,7 @@ export default function App() {
     const [page, setPage] = useState(1);
 
     const handleSearch = (topic) => {
-        setSearchTerm(topic);
+        setSearchTerm(`${topic}/${Date.now()}`);
         setPage(1);
         setArticles([]);
     };
@@ -35,7 +35,10 @@ export default function App() {
             try {
                 setError(false);
                 setIsLoading(true);
-                const data = await fetchArticles(searchTerm, page);
+                const data = await fetchArticles(
+                    searchTerm.split('/')[0],
+                    page
+                );
                 setArticles((prevArticles) => {
                     return [...prevArticles, ...data];
                 });
