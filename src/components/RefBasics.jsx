@@ -6,10 +6,26 @@
  *  - Доступ в ефектах і функціях
  */
 
+import { useEffect } from 'react';
+import { useRef } from 'react';
+
 export default function RefBasics() {
-  return (
-    <div>
-      <input type="text" />
-    </div>
-  );
+    const inputRef = useRef();
+
+    console.log(inputRef);
+
+    // useEffect(() => {
+    //     console.log(inputRef);
+    // }, []);
+
+    const setFocus = () => {
+        inputRef.current.focus();
+    };
+
+    return (
+        <div>
+            <input type="text" ref={inputRef} />;
+            <button onClick={setFocus}>Set focus to input</button>
+        </div>
+    );
 }
