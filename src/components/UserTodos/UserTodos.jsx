@@ -1,10 +1,10 @@
 import styles from './UserTodos.module.css';
 
 export default function UserTodos() {
-    return (
-        <div className={styles.container}>
-            <h2 className={styles.header}>User Todos</h2>
-            {/* <ul className={styles.list}>
+  return (
+    <div className={styles.container}>
+      <h2 className={styles.header}>User Todos</h2>
+      {/* <ul className={styles.list}>
                 {todos.map((todo) => (
                     <li
                         key={todo.id}
@@ -16,6 +16,6 @@ export default function UserTodos() {
                     </li>
                 ))}
             </ul> */}
-        </div>
-    );
+    </div>
+  );
 }

@@ -9,19 +9,19 @@ import css from './App.module.css';
 import UserDetailsPage from '../../pages/UserDetailsPage';
 
 export default function App() {
-    return (
-        <div className={css.container}>
-            <AppHeader />
+  return (
+    <div className={css.container}>
+      <AppHeader />
 
-            <Routes>
-                <Route path="/" element={<HomePage />} />
-                <Route path="/dashboard" element={<UsersPage />} />
-                <Route path="/dashboard/:userId" element={<UserDetailsPage />}>
-                    <Route path="posts" element={<UserPosts />} />
-                    <Route path="todos" element={<UserTodos />} />
-                </Route>
-                <Route path="*" element={<NotFoundPage />} />
-            </Routes>
-        </div>
-    );
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/dashboard" element={<UsersPage />} />
+        <Route path="/dashboard/:userId" element={<UserDetailsPage />}>
+          <Route path="posts" element={<UserPosts />} />
+          <Route path="todos" element={<UserTodos />} />
+        </Route>
+        <Route path="*" element={<NotFoundPage />} />
+      </Routes>
+    </div>
+  );
 }
