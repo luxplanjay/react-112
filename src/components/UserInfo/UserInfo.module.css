@@ -1,0 +1,38 @@
+/* UserInfo.module.css */
+.container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    max-width: 400px;
+}
+
+.avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+}
+
+.name {
+    margin: 0;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.detail {
+    margin: 2px 0;
+    font-size: 0.9rem;
+}
+
+.sectionTitle {
+    margin-top: 0.5rem;
+    font-size: 1rem;
+    color: #555;
+    font-weight: bold;
+}

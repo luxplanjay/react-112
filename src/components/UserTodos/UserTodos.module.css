@@ -1,0 +1,32 @@
+/* UserTodos.module.css */
+.container {
+    padding: 1rem;
+    max-width: 400px;
+}
+
+.header {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    color: #222;
+}
+
+.list {
+    list-style: none;
+    padding: 0;
+}
+
+.list li {
+    padding: 0.5rem;
+    border-bottom: 1px solid #ddd;
+    font-size: 1rem;
+}
+
+.completed {
+    color: #4caf50;
+    text-decoration: line-through;
+}
+
+.pending {
+    color: #d32f2f;
+}
