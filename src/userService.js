@@ -1,7 +1,7 @@
 import axios from 'axios';
 
-export const fetchUsers = async () => {
-  const resp = await axios.get('https://dummyjson.com/users');
+export const fetchUsers = async (query) => {
+  const resp = await axios.get(`https://dummyjson.com/users/search?q=${query}`);
   return resp.data.users;
 };
 

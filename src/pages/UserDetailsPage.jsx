@@ -1,5 +1,5 @@
-import { useEffect, useState } from 'react';
-import { NavLink, Outlet, useParams } from 'react-router';
+import { Suspense, useEffect, useRef, useState } from 'react';
+import { Link, NavLink, Outlet, useLocation, useParams } from 'react-router';
 import { fetchUserById } from '../userService';
 import UserInfo from '../components/UserInfo/UserInfo';
 
@@ -8,6 +8,9 @@ export default function UserDetailsPage() {
   const [user, setUser] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(false);
+
+  const location = useLocation();
+  const backLinkRef = useRef(location.state);
 
   useEffect(() => {
     async function getUser() {
@@ -28,6 +31,8 @@ export default function UserDetailsPage() {
 
   return (
     <div>
+      <Link to={backLinkRef.current}>Go back</Link>
+
       {isLoading && <b>Loading...</b>}
       {error && <b>Error...</b>}
       {user && <UserInfo user={user} />}
@@ -41,7 +46,9 @@ export default function UserDetailsPage() {
         </li>
       </ul>
 
-      <Outlet />
+      <Suspense fallback={<div>Loading posts or todos</div>}>
+        <Outlet />
+      </Suspense>
     </div>
   );
 }
