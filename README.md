@@ -1,10 +1,10 @@
 # Заняття 10 - Маршрутизація
 
 - Рядок запиту
-  - Із чого складається (https://gomerch.it/products?name=hoodie&color=orange&maxPrice=500)
-  - Вилучення параметрів з `useSearchParams`
+  - Синтаксис параметрів рядка запиту
+  - Вилучення параметрів через `useSearchParams`
   - Тип значень повертаємий методом `get`
-  - Зміна рядка запиту
+  - Зміна рядка запиту з `new URLSearchParams` та `setSearchParams`
 - Об'єкт місцезнаходження
   - Хук `useLocation`
   - Властивість `location.state`
