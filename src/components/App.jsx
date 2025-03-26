@@ -1,8 +1,6 @@
 import { useSelector } from 'react-redux';
 import Balance from './Balance';
 import LangSwitcher from './LangSwitcher';
-import NoteForm from './NoteForm';
-import NoteList from './NoteList';
 
 export default function App() {
   const appLang = useSelector((state) => state.locale.lang);
@@ -13,10 +11,6 @@ export default function App() {
         State management with Redux
       </h1>
 
-      <NoteForm />
-      <NoteList />
-
-      <hr />
       <Balance />
 
       <hr />
