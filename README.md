@@ -10,5 +10,3 @@
 - Що таке мемоізація (кешування обчислень)
 - Як працює мемоізація у Redux Toolkit
 - Оптимізація з `createSelector`
-
-<!-- https://create.kahoot.it/details/ua-7-2/ef01314e-8576-414a-9bab-9de619716aac -->
