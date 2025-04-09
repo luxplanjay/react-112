@@ -7,7 +7,10 @@ export default function LoginForm() {
   const dispatch = useDispatch();
 
   const handleSubmit = (values, actions) => {
-    dispatch(logIn(values));
+    dispatch(logIn(values))
+      .unwrap()
+      .then(() => console.log('Login success'));
+
     actions.resetForm();
   };
 

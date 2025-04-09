@@ -52,8 +52,25 @@ export const logIn = createAsyncThunk(
  */
 export const logOut = createAsyncThunk('auth/logout', async () => {
   await axios.post('/users/logout');
+  setAuthHeader('');
 });
 
-// react1212@mail.com
-// react1313@mail.com
-// 123123qweqwe
+export const refreshUser = createAsyncThunk(
+  'auth/refresh',
+  async (_, thunkAPI) => {
+    try {
+      const reduxState = thunkAPI.getState();
+      setAuthHeader(`Bearer ${reduxState.auth.token}`);
+      const response = await axios.get('/users/me');
+      return response.data;
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error.message);
+    }
+  },
+  {
+    condition: (_, thunkAPI) => {
+      const reduxState = thunkAPI.getState();
+      return reduxState.auth.token !== null;
+    },
+  }
+);
